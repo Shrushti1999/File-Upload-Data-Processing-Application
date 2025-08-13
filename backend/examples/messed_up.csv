@@ -1,0 +1,4 @@
+name,email,created_at,extra_column
+Frank,frank(at)example.com,2023-13-40,foo
+Grace,grace@example.com,2023-06-20,bar
+Heidi,not-an-email,not-a-date,baz
