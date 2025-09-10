@@ -2,15 +2,16 @@
 
 ## 🚀 Project Overview
 
-This is a **Flask backend application** that provides APIs for file processing and data management. The frontend was not implemented as part of this assessment - **testing was done using Postman**.
+This is a **full-stack web application** with a Flask backend and Next.js frontend for file processing and data management. The application provides a complete user interface for uploading, processing, and analyzing CSV and Excel files.
 
-**The backend application allows users to:
+**The application allows users to:
 
-1. **Upload CSV or Excel files** through a modern web interface
-2. **View a list of uploaded files** with metadata
-3. **Parse and store** uploaded CSV/Excel data
-4. **Display data** in organized tables with pagination
-5. **View file metadata** including row counts, date ranges, and column information
+1. **Upload CSV or Excel files** through a modern drag-and-drop web interface
+2. **View a list of uploaded files** with detailed metadata and validation status
+3. **Parse and validate** uploaded CSV/Excel data with email and date validation
+4. **Display data** in organized, paginated tables with configurable page sizes
+5. **View file metadata** including row counts, date ranges, column information, and file size
+6. **Delete files** with confirmation dialogs for safe file management
 
 ## 🏗️ Architecture
 
@@ -18,22 +19,29 @@ The application follows a modern client-server architecture:
 
 - **Frontend**: Next.js 15 with React 19, TypeScript, and Tailwind CSS
 - **Backend**: Flask with Python, handling file processing and data storage
-- **Storage**: In-memory storage
+- **Storage**: In-memory storage with automatic file parsing
+- **UI/UX**: Modern responsive design with drag-and-drop upload, pagination, and real-time status updates
 - **Testing**: Postman collection for API testing and validation
 
 ## 📁 Project Structure
 
 ```
-12aug-sg-backend_takehome-test1/
+File-Upload-Data-Processing-Application/
 ├── backend/                 # Flask backend application
-│   ├── main.py              # Main Flask application
+│   ├── main.py              # Main Flask application with API Endpoints
 │   ├── requirements.txt     # Python dependencies
+|   ├── generate_examples.py # Script to generate test CSV files
 │   ├── examples/            # Sample files for testing
 │   ├── uploads/             # File upload directory
 ├── frontend/                # Next.js frontend application
 │   ├── app/                 # Next.js app directory
+│   |   ├── page.tsx         # Main application component
+│   │   ├── layout.tsx       # Root layout component
+│   │   └── globals.css      # Global styles
 │   ├── package.json         # Node.js dependencies
-│   └── tailwind.config.ts   # Tailwind CSS configuration
+│   ├── tsconfig.json        # TypeScript configuration
+│   ├── tailwind.config.ts   # Tailwind CSS configuration
+│   └── next.config.ts       # Next.js configuration
 └── postman/collection       # API testing collection
 ```
 
@@ -118,19 +126,17 @@ npm install
 ```
 
 This will install all required packages, including:
-- **Next.js 15** - React framework
-- **React 19** - UI library
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Utility-first CSS framework
-- **Lucide React** - Icon library
+- **Next.js 15** - React framework with App Router
+- **React 19** - UI library with latest features
+- **TypeScript** - Type safety and better development experience
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **Lucide React** - Modern icon library for UI elements
 
 ### Step 3: Run Development Server
 ```bash
 npm run dev
 ```
 The frontend application will start on **http://localhost:3000/**
-
-**Note**: The frontend was not implemented as part of this assessment. The `frontend/` directory contains the original Next.js starter template, but was not developed further. All testing was done using **Postman** to validate the backend API endpoints.
 
 ## 🧪 Testing the Application
 
